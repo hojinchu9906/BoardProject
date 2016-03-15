@@ -1,0 +1,170 @@
+<%--
+  Created by IntelliJ IDEA.
+  User: sist
+  Date: 2016-03-15
+  Time: 오후 4:20
+  To change this template use File | Settings | File Templates.
+--%>
+<%@ page import="java.text.SimpleDateFormat" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" pageEncoding="EUC-KR"
+    import="java.util.*,com.sist.dao.*" %>
+
+<%
+    int curpage=0;
+    int totalPage=0;
+
+    //해당 테이블로터 데이터를 가져와 보여주기 위해서 dao를 생성함.
+    BoardDAO boardDAO=BoardDAO.newInstance();
+
+    //현재 페이지의 첫로우 정보는 사용자에게로부터 받음.
+    String strPage=request.getParameter("page");
+    if(strPage==null)
+        strPage="1";
+
+    //이 첫번째 로우가 담긴 페이지를 변수에 담음
+    curpage=Integer.parseInt(strPage);      //정수형으로 파싱함.
+
+    //전체 페이지 수 정보가 필요함.==>한 페이지당 보여줄 로우 수를 10개로해서 나눠서 보여줌.
+    totalPage=boardDAO.boardTotal();
+
+    //현재 페이지에 해당하는 로우(레코드) 10개 보여주기.
+    List<BoardDTO> boardDTOList=boardDAO.boardListData(curpage);
+
+    //전체 로우수
+    int count=boardDAO.boardCount();
+    //그중 해당 페이지에서 보여질 로우(레코드)수
+   count=count-((curpage*10)-10);
+%>
+<html>
+<head>
+    <meta http-equiv="CONTENT-TYPE" content="text/html; charset=EUC-KR">
+    <title>BoardProject</title>
+    <link rel="stylesheet" type="text/css" href="../css/board.css">
+</head>
+<body>
+    <center>
+        <img src="image/qna.jpg" width="700" height="100">
+        <p></p>
+        <table border="0" width="700">
+            <tr>
+                <td align="left">
+                    <img src="image/btn_write.gif">
+                </td>
+            </tr>
+        </table>
+
+        <table border="0" width="700">
+            <tr bgcolor="#ccccff">
+                <th width="10%">번호</th>
+                <th width="45%">글제목</th>
+                <th width="15%">이름</th>
+                <th width="20%">작성날짜</th>
+                <th width="10%">조회수</th>
+            </tr>
+            <%
+                int j=0;
+                String color="white";
+
+                for(BoardDTO boardDTO: boardDTOList){
+                    if(j%2==0)
+                        color="white";
+                    else
+                        color="#FFEB3B";
+
+                    %>
+                    <tr bgcolor=<%=color%>>
+                        <td width="10%" align="center"><%=count-- %></td>
+                    </tr>
+
+
+
+
+
+
+
+
+            <%
+                    j++;
+                }
+            %>
+
+        </table>
+    </center>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
