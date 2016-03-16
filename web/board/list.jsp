@@ -150,7 +150,9 @@
                     <a href="list.jsp?page=<%=totalPage%>">
                         <img src="image/end.gif" border="0">
                     </a>
+                        &nbsp;&nbsp;
 
+                    <%=curpage %> page / <%=totalPage %> pages
                 </td>
             </tr>
 
