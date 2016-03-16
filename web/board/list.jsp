@@ -109,7 +109,9 @@
                         <td width="20%" align="center">
                             <%=boardDTO.getRegdate().toString()%>           <!-- 작성일 출력 -->
                         </td>
-
+                        <td width="10%" align="center">
+                            <%=boardDTO.getHit()%>                          <!--조회수 출력 -->
+                        </td>
 
                     </tr>
 
