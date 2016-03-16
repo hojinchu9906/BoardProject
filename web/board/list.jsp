@@ -122,7 +122,7 @@
         </table>
 
         <hr width="700">        <!-- 구분선 추가함-->
-        <table border="0 width=700">
+        <table border="0" width="700">
             <tr>
                 <td align="left">
                     <select name="search">
@@ -135,6 +135,13 @@
                     <input type="image" src="image/btn_search.gif">
                 </td>
 
+                <!-- 아래 테이블의 두번째 열 추가함.-->
+                <td align="right">
+                    <a href="list.jsp?page=1">
+                        <img src="image/begin.gif" border="0">
+                    </a>
+
+                </td>
             </tr>
 
         </table>
