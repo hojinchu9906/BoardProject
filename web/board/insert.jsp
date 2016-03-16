@@ -35,7 +35,12 @@
                                 </td>
                             </tr>
 
-
+                            <tr>
+                                <td width="15%" align="right">±€¡¶∏Ò</td>
+                                <td width="85%" align="left">
+                                    <input type="text" name="subject" size="53" id="subject">
+                                </td>
+                            </tr>
                         </table>
                     </td>
                 </tr>
