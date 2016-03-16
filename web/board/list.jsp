@@ -106,6 +106,9 @@
                         <td width="15" align="center">
                             <%=boardDTO.getName()%>         <!--이름 열 출력 -->
                         </td>
+                        <td width="20%" align="center">
+                            <%=boardDTO.getRegdate().toString()%>           <!-- 작성일 출력 -->
+                        </td>
 
 
                     </tr>
