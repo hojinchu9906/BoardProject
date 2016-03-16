@@ -147,6 +147,9 @@
                     <a href="list.jsp?page=<%=curpage<totalPage ? curpage+1 : curpage%>">
                         <img src="image/next.gif" border="0">
                     </a>
+                    <a href="list.jsp?page=<%=totalPage%>">
+                        <img src="image/end.gif" border="0">
+                    </a>
 
                 </td>
             </tr>
