@@ -74,6 +74,40 @@
                     %>
                     <tr bgcolor=<%=color%>>
                         <td width="10%" align="center"><%=count-- %></td>
+                        <!-- 글제목 열부분 출력-그중 댓글이 있는 경우를 먼저 기술함.-->
+                        <td width="45% align=left">
+                            <%
+                                //글제목부분이 댓글이 있어 그룹으로 되었을때 출력내용 기술.
+                                if(boardDTO.getGroup_tab()>0){
+                                    for(int i=0;i<boardDTO.getGroup_tab();i++){
+                                        %>
+                                        &nbsp;&nbsp;
+                            <%
+                                    }
+                            %>
+                                    <img src="image/icon_reply.gif">
+                            <%
+                                }
+                            %>
+                            <!--글제목 열부분 출력  -->
+                            <a href="content.jsp?no=<%=boardDTO.getNo()%>&page=<%=curpage%>"><%=boardDTO.getSubject()%></a>
+
+                            <!-- 새글의 경우 new 표시-->
+                            <%
+                                String todayStr=new SimpleDateFormat("yyyy-MM-dd").format(new Date());
+                                String dbdayStr=boardDTO.getRegdate().toString();
+                                if(todayStr.equals(dbdayStr)){
+                                    %>
+                                    &nbsp;<sup><img src="image/icon_new%20(2).gif"></sup>
+                            <%
+                                }
+                            %>
+                        </td>
+                        <td width="15" align="center">
+                            <%=boardDTO.getName()%>         <!--이름 열 출력 -->
+                        </td>
+
+
                     </tr>
 
 
