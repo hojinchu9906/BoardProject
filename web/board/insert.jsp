@@ -56,7 +56,12 @@
                                 </td>
                             </tr>
 
-
+                            <tr>
+                                <td colspan="2" align="center">
+                                    <input type="button" value="보내기" id="sendBtn">
+                                    <input type="button" value="취소" onclick="javascript:history.back()">
+                                </td>
+                            </tr>
 
                         </table>
                     </td>
