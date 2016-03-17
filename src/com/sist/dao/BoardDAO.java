@@ -175,6 +175,35 @@ public class BoardDAO {
         }
         return total;
     }
+
+    //기능 추가
+    //테이블에 AO 추가하기
+    public void boardInsert(BoardDTO boardDTO){
+        try{
+            getConnection();
+            //쿼리문 작성
+            String sql="INSERT INTO board(no,name,subject,content,pwd,group_id) "
+                        +"VALUES((SELECT NVL(MAX(no)+1,1) FROM board),"
+                        +"?,?,?,?,"
+                        +"(SELECT NVL(MAX(group_id)+1,1) FROM board))";
+
+            //스트림 객체 생성
+            preparedStatement=connection.prepareStatement(sql);
+            //이제 해당 입력하는 값을 AO에 설정
+            preparedStatement.setString(1,boardDTO.getName());
+            preparedStatement.setString(2,boardDTO.getSubject());
+            preparedStatement.setString(3,boardDTO.getContent());
+            preparedStatement.setString(4,boardDTO.getPwd());
+
+            //위 설정된 AO를 실행
+            preparedStatement.executeQuery();
+
+        }catch (Exception ex){
+            System.out.println(ex.getMessage());
+        }finally {
+            disConnection();
+        }
+    }
 }
 
 

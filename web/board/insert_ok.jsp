@@ -2,15 +2,80 @@
   Created by IntelliJ IDEA.
   User: sist
   Date: 2016-03-16
-  Time: ì˜¤í›„ 5:14
+  Time: ¿ÀÈÄ 5:14
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java"
+    pageEncoding="EUC-KR" import="com.sist.dao.*" %>
+<%
+    request.setCharacterEncoding("EUC-KR");
+    String name=request.getParameter("name");
+    String subject=request.getParameter("subject");
+    String content=request.getParameter("content");
+    String pwd=request.getParameter("pwd");
+
+    //À§ ¹Þ¾Æ¿Â °ªÀ» AO¿¡ ¼³Á¤.
+    //ÇØ´ç AO °´Ã¼ »ý¼º
+    BoardDTO boardDTO=new BoardDTO();
+    boardDTO.setName(name);
+    boardDTO.setSubject(subject);
+    boardDTO.setContent(content);
+    boardDTO.setPwd(pwd);
+
+    //ÀÌÁ¦ ÀÌ °ªÀ» µðºñ Å×ÀÌºí¿¡ Ãß°¡ÇØ¾ßÇÔ.
+    //ÇØ´ç ±â´ÉÀ» °®°í ÀÖ´Â DAOÀÇ ¸Å¼­µå¸¦ È£ÃâÇÔ
+    //ÀÏ´Ü dao °´Ã¼ »ý¼º.
+    BoardDAO boardDAO=new BoardDAO.newInstance();
+
+    boardDAO.boardInsert(boardDTO);
+    //ÀÔ·ÂÇÏ°í ³ª¼­ ÀÚµ¿À¸·Î ÀüÈ¯(¸®´ÙÀÌ·ºÆ®)
+    response.sendRedirect("list.jsp");
+%>
 <html>
 <head>
-    <title>Title</title>
+    <title>±Û¾²±â ÀÌº¥Æ®½Ã °á°úÃ³¸®ÇÏ´Â ÆäÀÌÁö</title>
 </head>
 <body>
 
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
