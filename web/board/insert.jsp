@@ -49,6 +49,14 @@
                                 </td>
                             </tr>
 
+                            <tr>
+                                <td widhth="15%" align="right">비밀번호</td>
+                                <td width="85%" align="left">
+                                    <input type="password" name="pwd" size="10" id="pwd">
+                                </td>
+                            </tr>
+
+
 
                         </table>
                     </td>
