@@ -41,6 +41,15 @@
                                     <input type="text" name="subject" size="53" id="subject">
                                 </td>
                             </tr>
+
+                            <tr>
+                                <td width="15%" align="right" valign="top">±Û ³»¿ë</td>
+                                <td width="85%" align="left">
+                                    <textarea rows="10" cols="50" name="content" id="content"></textarea>
+                                </td>
+                            </tr>
+
+
                         </table>
                     </td>
                 </tr>
