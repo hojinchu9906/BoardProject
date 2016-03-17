@@ -14,7 +14,33 @@
 
     <script>
         $(function(){
+            $('#sendBtn').click(function(){
+               var name=$('#name').val();
+                if(name.trim()==""){
+                    $('#name').focus();
+                    return;
+                }
 
+               var subject=$('#subject').val();
+                if(subject.trim()==""){
+                    $('#subject').focus();
+                    return;
+                }
+
+               var content=$('#content').val();
+                if(content.trim()==""){
+                    $('#content').focus();
+                    return;
+                }
+
+               var pwd=$('#pwd').val();
+                if(pwd.trim()==""){
+                    $('#pwd').focus();
+                    return;
+                }
+
+                $('#form').submit();
+            });
         });
 
     </script>
